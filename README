@@ -1,0 +1,40 @@
+Works best on Chrome and Firefox 4
+------------------------------------------------------------------------
+
+Installing:
+-----------
+
+  grab this repo
+  
+
+Installing dependencies:
+------------------------
+
+  npm install connect meryl websocket-server imagemagick
+
+
+Running server:
+---------------
+
+  node server.js
+
+  
+Playing:
+--------
+
+  Go to http://localhost:8080/
+  Press 'h' for help.
+  
+  
+Creating sprite images:
+-----------------------
+
+  node create_sprites.js [home_team] [away_team]
+  
+  No arguments will create a random combination of sprite images
+
+
+------------------------------------------------------------------------
+
+A lot more work is yet to be done! Fork it and improve! :)
+

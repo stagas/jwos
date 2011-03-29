@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<link type="text/css" rel="stylesheet" href="pixelfont.css">
+<link type="text/css" rel="stylesheet" href="style.css">
+<title>Javascript World Of Soccer</title>
+<script type="text/javascript">
+  try {
+    if (typeof console === 'undefined') console = { log: function() {} }
+  } catch(e) {}
+</script>
+
+<script type="text/javascript" src="js/dynamic.js"></script>
+<script type="text/javascript" src="js/brequire.js"></script>
+<script type="text/javascript" src="js/compatibility.js"></script>
+
+<script type="text/javascript" src="lib/functions.js"></script>
+<script type="text/javascript" src="lib/ball.js"></script>
+<script type="text/javascript" src="lib/camera.js"></script>
+<script type="text/javascript" src="lib/comm.js"></script>
+<script type="text/javascript" src="lib/const.js"></script>
+<script type="text/javascript" src="lib/game.js"></script>
+<script type="text/javascript" src="lib/keys.js"></script>
+<script type="text/javascript" src="lib/player.js"></script>
+<script type="text/javascript" src="lib/socket.js"></script>
+<script type="text/javascript" src="lib/sprite.js"></script>
+<script type="text/javascript" src="lib/state.js"></script>
+<script type="text/javascript" src="lib/team.js"></script>
+<script type="text/javascript" src="lib/timer.js"></script>
+
+<script>
+
+window.onload = function() {
+  var tsx = 336
+    , tsy = 1696
+    , tn = 4
+    , tm = 4
+    , t = []
+    , ty = 0
+    , tx = 0
+    
+  for (var i = 0; i < tm; i++) {
+    t.push('<div style="')
+    t.push('background:url(pitch_' + i + '.png) top left no-repeat; height:'+tsy+'px; width:'+tsx+'px; float:left; ')
+    t.push('position:absolute; top:' + (ty*tsy) + 'px; left:' + (tx) + 'px; z-index:1; ')
+    tx += tsx
+    if (tx == tn*tsx) {
+      ty++
+      tx=0
+    }
+    t.push('"></div>')
+  }
+  
+  var $stadium = document.getElementById('stadium')
+  $stadium.innerHTML = t.join('')
+  $stadium.style.width = (tsx*tn) + 'px'
+  $stadium.style.height = ((tm/tn)*tsy) + 'px'
+
+  var game = new(require('game'))
+  game.init()
+  game.loop(1000 / 60)
+}
+
+</script>
+</head>
+<body>
+
+<!-- debugging canvas -->
+<!-- <canvas id="c" width="1000" height="1000"></canvas> -->
+
+<div id="console"></div>
+<div id="stadium"></div>
+<div id="ball"></div>
+<div id="ball_shadow"></div>
+<div id="helper"></div>
+
+</body>
+</html>

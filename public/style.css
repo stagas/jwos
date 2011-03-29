@@ -1,0 +1,132 @@
+html {
+width:1344px;
+height:1696px;
+}
+body {
+position:absolute;
+padding:0;
+margin:0;
+width:100%;
+height:100%;
+overflow:hidden;
+}
+
+#stadium {
+position:absolute;
+top:0;
+left:0;
+float:left;
+background:#393;
+
+/* 
+
+  Background image by Patrick Hoesly
+
+  http://www.zooboing.com/
+  
+*/
+background:url(grass.jpg);
+
+}
+
+.player {
+border-top:1px solid transparent;
+position:absolute;
+float:left;
+font-family:'SilkscreenNormal', Arial, sans-serif;
+color:rgba(255,255,255,0.65);
+text-shadow:1px 1px rgba(0,0,0,0.30);
+font-size:8px;
+}
+
+.player span {
+position:absolute;
+display:block;
+opacity:0;
+text-align:center;
+bottom:35px;
+}
+
+.master span {
+color:rgba(255,255,0,0.55);
+font-family:'SilkscreenBold', 'SilkscreenNormal', Arial, sans-serif;
+}
+
+.player.home.white_black {
+background:url(player_home_white_black.png) top left no-repeat;
+}
+.player.home.white_brown {
+background:url(player_home_white_brown.png) top left no-repeat;
+}
+.player.home.white_blonde {
+background:url(player_home_white_blonde.png) top left no-repeat;
+}
+.player.home.black_black {
+background:url(player_home_black_black.png) top left no-repeat;
+}
+.player.home.black_brown {
+background:url(player_home_black_brown.png) top left no-repeat;
+}
+.player.home.black_blonde {
+background:url(player_home_black_blonde.png) top left no-repeat;
+}
+
+.player.away.white_black {
+background:url(player_away_white_black.png) top left no-repeat;
+}
+.player.away.white_brown {
+background:url(player_away_white_brown.png) top left no-repeat;
+}
+.player.away.white_blonde {
+background:url(player_away_white_blonde.png) top left no-repeat;
+}
+.player.away.black_black {
+background:url(player_away_black_black.png) top left no-repeat;
+}
+.player.away.black_brown {
+background:url(player_away_black_brown.png) top left no-repeat;
+}
+.player.away.black_blonde {
+background:url(player_away_black_blonde.png) top left no-repeat;
+}
+
+#helper {
+position:absolute;
+background:rgba(255,0,90,0.9);
+z-index:999;
+}
+
+#c {
+position:absolute;
+top:0px;
+left:0px;
+z-index:999;
+}
+
+#ball {
+position:absolute;
+z-index:10;
+width:8px;
+height:8px;
+margin:-4px 0 0 -4px;
+background:url(ball.png) 0 0 no-repeat;
+}
+#ball_shadow {
+position:absolute;
+z-index:9;
+width:8px;
+height:8px;
+margin:-4px 0 0 -4px;
+background:url(ball.png) -32px 0 no-repeat;
+opacity:0.5;
+}
+
+#console {
+position:fixed;
+top:0;
+left:0;
+color:#FFF;
+font-weight:bold;
+font-family:Consolas;
+z-index:999;
+}

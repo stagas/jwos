@@ -1,0 +1,29 @@
+TODO
+========
+
+ordered:
+
+alpha version!
+
+adding events (goal, out, corner, side out)
+adding movements and player skills (tackling, heading)
+keeper skills, saving, fisting, tackling
+referree, following, fouls, yellow cards, red cards, penalties
+time, half time, full time, extra time, penalties
+beta version!
+
+unordered:
+
+stadium class, painting new sprites, fields
+
+extra:
+
+create your player, manage appearance
+tweet game and goals
+
+finished:
+
+kicking / lob / spin
+ball post collision & net collision
+passing
+node app, sockets, adding players on join, syncing everything
