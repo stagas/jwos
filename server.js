@@ -105,11 +105,12 @@ var server = connect.createServer(
     if (typeof req.headers.remoteAddress === 'undefined')
       req.headers.remoteAddress = req.connection.remoteAddress
 
+    req.headers.ip = req.headers.remoteAddress
     next()
   }
 , connect.logger({ format: 
       '[:date] '
-    + ':req[remoteAddress] '.magenta      
+    + ':req[ip] '.magenta      
     + ':method '.yellow
     + ':status '.white
     + ':url '.green
