@@ -144,7 +144,7 @@ Game.prototype = {
     this.socket.connect('ws://' + HOST + ':' + WSPORT + window.location.pathname)
     window.onunload = window.onclose = function() {
       try { self.socket.close() } catch(e) {}
-      alert('closing socket')
+      //alert('closing socket')
     }
   }
   
