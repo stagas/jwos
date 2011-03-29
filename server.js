@@ -110,7 +110,7 @@ var server = connect.createServer(
   }
 , connect.logger({ format: 
       '[:date] '
-    + ':req[ip] '.magenta      
+    + ':req[ip] '.magenta
     + ':method '.yellow
     + ':status '.white
     + ':url '.green
@@ -196,18 +196,6 @@ Client.prototype = {
     this.comm.last = {}
     var delta = this.comm.delta(this.comm.now, this.comm.last)
     this.state = this.comm.serialize(delta)
- //   console.log(delta)
-   // this.comm.remember()
-    
-   // if (delta.length) {
-   //   this.comm.storePub()
-   //   var deltaPub = this.comm.delta(this.comm.pubNow, this.comm.pubLast)
-   //   this.comm.rememberPub()
-      
-      //if (deltaPub.length) {
-       // this.state = this.comm.serialize(this.comm.now)
-     // }
-   // }
   }
 
 , receive: function(msg) {
@@ -293,7 +281,7 @@ websocket.on('connection', function(conn) {
   
   conn.on('message', function(message) {
     client.receive(message)
-    logg(g, client.uid.yellow, message)
+    logg(g, client.uid.toString().yellow, client.name.toString().green, message)
     client.send(client.uid +' '+ message)
   })
   
